@@ -1,9 +1,28 @@
 import './App.css';
-import Button from 'react-bootstrap/Button';
+import { Route, Routes } from "react-router-dom";
+import GroceryStore from './pages/GroceryStore';
+import Checkout from './pages/Checkout';
+import PageLayout from './components/PageLayout';
 
 function App() {
   return (
-    <Button variant="primary">Prim ary</Button>
+    <Routes>
+
+      <Route path='/' element={
+        <PageLayout>
+          <GroceryStore />
+        </PageLayout>}
+      />
+
+      <Route path='/checkout' element={
+        <PageLayout>
+          <Checkout />
+        </PageLayout>}
+      />
+
+    </Routes >
+
+
   );
 }
 
